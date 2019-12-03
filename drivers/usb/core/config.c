@@ -275,7 +275,7 @@ static int usb_parse_endpoint(struct device *ddev, int cfgno,
 				if (d->bEndpointAddress != to_usb_device(ddev)->hwinfo.fb_in_ep) {
 					to_usb_device(ddev)->hwinfo.in_ep =
 						d->bEndpointAddress;
-					dev_info(ddev, " This is IN ISO endpoint #0%x 0x%p\n",
+					dev_info(ddev, " This is IN ISO endpoint #0%x 0x%x\n",
 						d->bEndpointAddress, d->bSynchAddress);
 				} else
 					dev_info(ddev, "IN ISO endpoint is same with FB #0%x\n",
@@ -283,19 +283,19 @@ static int usb_parse_endpoint(struct device *ddev, int cfgno,
 				if ((d->bLength > 7) && (d->bSynchAddress != 0x0)) {
 					to_usb_device(ddev)->hwinfo.fb_out_ep =
 						d->bSynchAddress;
-					dev_info(ddev, "Feedback IN ISO endpoint #0%x 0x%p\n",
+					dev_info(ddev, "Feedback IN ISO endpoint #0%x 0x%x\n",
 						d->bEndpointAddress, d->bSynchAddress);
 				}
 			} else {
 
 				to_usb_device(ddev)->hwinfo.out_ep =
 					d->bEndpointAddress;
-				dev_info(ddev, " This is OUT ISO endpoint #0%x 0x%p\n",
+				dev_info(ddev, " This is OUT ISO endpoint #0%x 0x%x\n",
 					d->bEndpointAddress, d->bSynchAddress);
 				if ((d->bLength > 7) && (d->bSynchAddress != 0x0)) {
 					to_usb_device(ddev)->hwinfo.fb_in_ep =
 						d->bSynchAddress;
-					dev_info(ddev, "Feedback IN ISO endpoint #0%x 0x%p\n",
+					dev_info(ddev, "Feedback IN ISO endpoint #0%x 0x%x\n",
 						d->bEndpointAddress, d->bSynchAddress);
 				}
 			}
@@ -304,12 +304,12 @@ static int usb_parse_endpoint(struct device *ddev, int cfgno,
 			if (d->bEndpointAddress & USB_ENDPOINT_DIR_MASK) {
 				to_usb_device(ddev)->hwinfo.fb_in_ep =
 					d->bEndpointAddress;
-				dev_info(ddev, "Feedback IN ISO endpoint #0%x 0x%p\n",
+				dev_info(ddev, "Feedback IN ISO endpoint #0%x 0x%x\n",
 					d->bEndpointAddress, d->bSynchAddress);
 			} else {
 				to_usb_device(ddev)->hwinfo.fb_out_ep =
 					d->bEndpointAddress;
-				dev_info(ddev, "Feedback OUT ISO endpoint #0%x 0x%p\n",
+				dev_info(ddev, "Feedback OUT ISO endpoint #0%x 0x%x\n",
 					d->bEndpointAddress, d->bSynchAddress);
 			}
 		}
