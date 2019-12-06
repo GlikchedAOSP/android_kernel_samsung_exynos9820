@@ -209,7 +209,7 @@ static int snd_usb_create_stream(struct snd_usb_audio *chip, int ctrlif, int int
 						  USB_AUDIO_IFACE_UNUSED);
 	}
 
-	dev_info(&dev->dev, "usb_host : %s %u:%d \n", __func__);
+	dev_info(&dev->dev, "usb_host : %s %u:%d \n", __func__, ctrlif, interface);
 	return 0;
 }
 
