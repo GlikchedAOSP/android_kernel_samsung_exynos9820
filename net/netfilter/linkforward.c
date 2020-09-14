@@ -224,8 +224,13 @@ int linkforward_add(__be16 dst_port, struct nf_conntrack_tuple *t_rpl, struct nf
 
 	if (!room_found) {
 		last_conn_idx++;
+
 		if (last_conn_idx == MAX_CONNECTION_CNT)
 			last_conn_idx = 0;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5d5cf97b706d (net/netfilter/linkforward: fix misleading indentation)
 		i = last_conn_idx;
 		conn[i].enabled = true;
 		conn[i].dst_port = dst_port;
