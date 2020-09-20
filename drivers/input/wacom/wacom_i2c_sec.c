@@ -1691,7 +1691,7 @@ static void print_spec_data(struct wacom_i2c *wac_i2c)
 	memset(tmp_buf, 0x00, CMD_RESULT_WORD_LEN);
 
 	for (i = 0; i < edata->max_x_ch; i++) {
-		snprintf(tmp_buf, CMD_RESULT_WORD_LEN, "%ld ",
+		snprintf(tmp_buf, CMD_RESULT_WORD_LEN, "%lld ",
 			 edata->xx_ref[i] * power(edata->shift_value));
 		strlcat(buff, tmp_buf, buff_size);
 		memset(tmp_buf, 0x00, CMD_RESULT_WORD_LEN);
@@ -1705,7 +1705,7 @@ static void print_spec_data(struct wacom_i2c *wac_i2c)
 	memset(tmp_buf, 0x00, CMD_RESULT_WORD_LEN);
 
 	for (i = 0; i < edata->max_x_ch; i++) {
-		snprintf(tmp_buf, CMD_RESULT_WORD_LEN, "%ld ",
+		snprintf(tmp_buf, CMD_RESULT_WORD_LEN, "%lld ",
 			 edata->xy_ref[i] * power(edata->shift_value));
 		strlcat(buff, tmp_buf, buff_size);
 		memset(tmp_buf, 0x00, CMD_RESULT_WORD_LEN);
@@ -1719,7 +1719,7 @@ static void print_spec_data(struct wacom_i2c *wac_i2c)
 	memset(tmp_buf, 0x00, CMD_RESULT_WORD_LEN);
 
 	for (i = 0; i < edata->max_y_ch; i++) {
-		snprintf(tmp_buf, CMD_RESULT_WORD_LEN, "%ld ",
+		snprintf(tmp_buf, CMD_RESULT_WORD_LEN, "%lld ",
 			 edata->yx_ref[i] * power(edata->shift_value));
 		strlcat(buff, tmp_buf, buff_size);
 		memset(tmp_buf, 0x00, CMD_RESULT_WORD_LEN);
@@ -1733,7 +1733,7 @@ static void print_spec_data(struct wacom_i2c *wac_i2c)
 	memset(tmp_buf, 0x00, CMD_RESULT_WORD_LEN);
 
 	for (i = 0; i < edata->max_y_ch; i++) {
-		snprintf(tmp_buf, CMD_RESULT_WORD_LEN, "%ld ",
+		snprintf(tmp_buf, CMD_RESULT_WORD_LEN, "%lld ",
 			 edata->yy_ref[i] * power(edata->shift_value));
 		strlcat(buff, tmp_buf, buff_size);
 		memset(tmp_buf, 0x00, CMD_RESULT_WORD_LEN);
@@ -1747,7 +1747,7 @@ static void print_spec_data(struct wacom_i2c *wac_i2c)
 	memset(tmp_buf, 0x00, CMD_RESULT_WORD_LEN);
 
 	for (i = 0; i < edata->max_x_ch; i++) {
-		snprintf(tmp_buf, CMD_RESULT_WORD_LEN, "%ld ",
+		snprintf(tmp_buf, CMD_RESULT_WORD_LEN, "%lld ",
 			 edata->xx_spec[i] / POWER_OFFSET * power(edata->shift_value));
 		strlcat(buff, tmp_buf, buff_size);
 		memset(tmp_buf, 0x00, CMD_RESULT_WORD_LEN);
@@ -1761,7 +1761,7 @@ static void print_spec_data(struct wacom_i2c *wac_i2c)
 	memset(tmp_buf, 0x00, CMD_RESULT_WORD_LEN);
 
 	for (i = 0; i < edata->max_x_ch; i++) {
-		snprintf(tmp_buf, CMD_RESULT_WORD_LEN, "%ld ",
+		snprintf(tmp_buf, CMD_RESULT_WORD_LEN, "%lld ",
 			 edata->xy_spec[i] / POWER_OFFSET * power(edata->shift_value));
 		strlcat(buff, tmp_buf, buff_size);
 		memset(tmp_buf, 0x00, CMD_RESULT_WORD_LEN);
@@ -1775,7 +1775,7 @@ static void print_spec_data(struct wacom_i2c *wac_i2c)
 	memset(tmp_buf, 0x00, CMD_RESULT_WORD_LEN);
 
 	for (i = 0; i < edata->max_y_ch; i++) {
-		snprintf(tmp_buf, CMD_RESULT_WORD_LEN, "%ld ",
+		snprintf(tmp_buf, CMD_RESULT_WORD_LEN, "%lld ",
 			 edata->yx_spec[i] / POWER_OFFSET * power(edata->shift_value));
 		strlcat(buff, tmp_buf, buff_size);
 		memset(tmp_buf, 0x00, CMD_RESULT_WORD_LEN);
@@ -1789,7 +1789,7 @@ static void print_spec_data(struct wacom_i2c *wac_i2c)
 	memset(tmp_buf, 0x00, CMD_RESULT_WORD_LEN);
 
 	for (i = 0; i < edata->max_y_ch; i++) {
-		snprintf(tmp_buf, CMD_RESULT_WORD_LEN, "%ld ",
+		snprintf(tmp_buf, CMD_RESULT_WORD_LEN, "%lld ",
 			 edata->yy_spec[i] / POWER_OFFSET * power(edata->shift_value));
 		strlcat(buff, tmp_buf, buff_size);
 		memset(tmp_buf, 0x00, CMD_RESULT_WORD_LEN);
@@ -1803,7 +1803,7 @@ static void print_spec_data(struct wacom_i2c *wac_i2c)
 	memset(tmp_buf, 0x00, CMD_RESULT_WORD_LEN);
 
 	for (i = 0; i < edata->max_x_ch; i++) {
-		snprintf(tmp_buf, CMD_RESULT_WORD_LEN, "%ld ",
+		snprintf(tmp_buf, CMD_RESULT_WORD_LEN, "%lld ",
 			 edata->rxx_ref[i] * power(edata->shift_value) / POWER_OFFSET);
 		strlcat(buff, tmp_buf, buff_size);
 		memset(tmp_buf, 0x00, CMD_RESULT_WORD_LEN);
@@ -1817,7 +1817,7 @@ static void print_spec_data(struct wacom_i2c *wac_i2c)
 	memset(tmp_buf, 0x00, CMD_RESULT_WORD_LEN);
 
 	for (i = 0; i < edata->max_x_ch; i++) {
-		snprintf(tmp_buf, CMD_RESULT_WORD_LEN, "%ld ",
+		snprintf(tmp_buf, CMD_RESULT_WORD_LEN, "%lld ",
 			 edata->rxy_ref[i] * power(edata->shift_value) / POWER_OFFSET);
 		strlcat(buff, tmp_buf, buff_size);
 		memset(tmp_buf, 0x00, CMD_RESULT_WORD_LEN);
@@ -1831,7 +1831,7 @@ static void print_spec_data(struct wacom_i2c *wac_i2c)
 	memset(tmp_buf, 0x00, CMD_RESULT_WORD_LEN);
 
 	for (i = 0; i < edata->max_y_ch; i++) {
-		snprintf(tmp_buf, CMD_RESULT_WORD_LEN, "%ld ",
+		snprintf(tmp_buf, CMD_RESULT_WORD_LEN, "%lld ",
 			 edata->ryx_ref[i] * power(edata->shift_value) / POWER_OFFSET);
 		strlcat(buff, tmp_buf, buff_size);
 		memset(tmp_buf, 0x00, CMD_RESULT_WORD_LEN);
@@ -1845,7 +1845,7 @@ static void print_spec_data(struct wacom_i2c *wac_i2c)
 	memset(tmp_buf, 0x00, CMD_RESULT_WORD_LEN);
 
 	for (i = 0; i < edata->max_y_ch; i++) {
-		snprintf(tmp_buf, CMD_RESULT_WORD_LEN, "%ld ",
+		snprintf(tmp_buf, CMD_RESULT_WORD_LEN, "%lld ",
 			 edata->ryy_ref[i] * power(edata->shift_value) / POWER_OFFSET);
 		strlcat(buff, tmp_buf, buff_size);
 		memset(tmp_buf, 0x00, CMD_RESULT_WORD_LEN);
@@ -1859,7 +1859,7 @@ static void print_spec_data(struct wacom_i2c *wac_i2c)
 	memset(tmp_buf, 0x00, CMD_RESULT_WORD_LEN);
 
 	for (i = 0; i < edata->max_x_ch; i++) {
-		snprintf(tmp_buf, CMD_RESULT_WORD_LEN, "%ld ",
+		snprintf(tmp_buf, CMD_RESULT_WORD_LEN, "%lld ",
 			 edata->drxx_spec[i] * power(edata->shift_value) / POWER_OFFSET);
 		strlcat(buff, tmp_buf, buff_size);
 		memset(tmp_buf, 0x00, CMD_RESULT_WORD_LEN);
@@ -1873,7 +1873,7 @@ static void print_spec_data(struct wacom_i2c *wac_i2c)
 	memset(tmp_buf, 0x00, CMD_RESULT_WORD_LEN);
 
 	for (i = 0; i < edata->max_x_ch; i++) {
-		snprintf(tmp_buf, CMD_RESULT_WORD_LEN, "%ld ",
+		snprintf(tmp_buf, CMD_RESULT_WORD_LEN, "%lld ",
 			 edata->drxy_spec[i] * power(edata->shift_value) / POWER_OFFSET);
 		strlcat(buff, tmp_buf, buff_size);
 		memset(tmp_buf, 0x00, CMD_RESULT_WORD_LEN);
@@ -1887,7 +1887,7 @@ static void print_spec_data(struct wacom_i2c *wac_i2c)
 	memset(tmp_buf, 0x00, CMD_RESULT_WORD_LEN);
 
 	for (i = 0; i < edata->max_y_ch; i++) {
-		snprintf(tmp_buf, CMD_RESULT_WORD_LEN, "%ld ",
+		snprintf(tmp_buf, CMD_RESULT_WORD_LEN, "%lld ",
 			 edata->dryx_spec[i] * power(edata->shift_value) / POWER_OFFSET);
 		strlcat(buff, tmp_buf, buff_size);
 		memset(tmp_buf, 0x00, CMD_RESULT_WORD_LEN);
@@ -1901,7 +1901,7 @@ static void print_spec_data(struct wacom_i2c *wac_i2c)
 	memset(tmp_buf, 0x00, CMD_RESULT_WORD_LEN);
 
 	for (i = 0; i < edata->max_y_ch; i++) {
-		snprintf(tmp_buf, CMD_RESULT_WORD_LEN, "%ld ",
+		snprintf(tmp_buf, CMD_RESULT_WORD_LEN, "%lld ",
 			 edata->dryy_spec[i] * power(edata->shift_value) / POWER_OFFSET);
 		strlcat(buff, tmp_buf, buff_size);
 		memset(tmp_buf, 0x00, CMD_RESULT_WORD_LEN);
