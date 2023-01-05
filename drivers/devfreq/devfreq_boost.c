@@ -86,6 +86,9 @@ void devfreq_boost_kick(enum df_device device)
 {
 	struct df_boost_drv *d = &df_boost_drv_g;
 
+	if (disable_boost)
+		return;
+
 	__devfreq_boost_kick(&d->devices[device]);
 }
 
@@ -121,17 +124,10 @@ void devfreq_boost_kick_max(enum df_device device, unsigned int duration_ms)
 {
 	struct df_boost_drv *d = &df_boost_drv_g;
 
-	__devfreq_boost_kick_max(&d->devices[device], duration_ms);
-}
-
-void devfreq_boost_frame_kick(enum df_device device)
-{
-	struct df_boost_drv *d = &df_boost_drv_g;
-
-	if (unlikely(disable_boost))
+	if (disable_boost)
 		return;
 
-	__devfreq_boost_kick_max(&d->devices[device], CONFIG_DEVFREQ_DECON_BOOST_DURATION_MS);
+	__devfreq_boost_kick_max(&d->devices[device], duration_ms);
 }
 
 void devfreq_register_boost_device(enum df_device device, struct devfreq *df)
