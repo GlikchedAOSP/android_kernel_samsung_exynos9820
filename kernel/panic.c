@@ -29,6 +29,11 @@
 #include <linux/bug.h>
 #include <linux/ratelimit.h>
 #include <linux/sysfs.h>
+#include <linux/debug-snapshot.h>
+
+#ifdef CONFIG_SEC_DEBUG_EXTRA_INFO
+#include <linux/sec_debug.h>
+#endif
 
 #define PANIC_TIMER_STEP 100
 #define PANIC_BLINK_SPD 18
